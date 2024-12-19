@@ -50,21 +50,23 @@ console.log(me.shoeCount + ' shoes are what I currently have!');
 // Do not ask why I have that many, finding size 13 Vans at a reasonable price is hard so I buy what I can when I can :(
 
 let newValue = 0
-function changeProperty (me, info, change) {
+let update = 0
+function changeProperty (info, change, value) {
 
-  if (info = 'shoeCount') {
-    console.log(info + change);
-    me.shoeCount = info + change
-    newValue = 'I have ' + me.shoecount + ' shoes'
-  }
-
+  if (info == 'shoeCount') {
+    if (change == 'add') {
+      me.shoeCount = me.shoeCount + value
+    };
+    if (change == 'remove') {
+      me.shoeCount = me.shoeCount - value
+    };
+    console.log('I have ' + me.shoeCount + ' shoes now!');
+  };
   //There would need to be another if and an else for any of the other info pieces to be changed
-  //Something for another
-  
-  return newValue + ' now!'
+  //Something for another time I guess
 }
 
-console.log(changeProperty(me, 'shoeCount', " + 1"))
+console.log(changeProperty('shoeCount', 'add', 1))
 
 /* 5. Add a new property to an existing object.
   - Add a 'favoriteColor' to your existing object
